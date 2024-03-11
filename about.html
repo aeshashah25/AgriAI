@@ -1,0 +1,74 @@
+{% extends 'base.html' %} {% block title %}Welcome{% endblock title %}
+
+{% block content %}
+<style>
+    body {
+
+
+        background-image: url("https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-2165688.jpg&fm=jpg");
+        background-size: cover;
+    }
+
+    p {
+        font-weight: 600;
+        font-size: large;
+    }
+</style>
+<div class="row-sm p-sm-5">
+    <div class="col-sm-12 p-sm-5" style="background: rgba(255, 255, 255, 0.295);
+        backdrop-filter: blur(5px);">
+        <h2 style="text-align: center;"> About Us</h2>
+        <h2 style="margin-top: 100px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);"> AgriAI: Enhancing Crop Yield and
+            Health through Intelligent Farming
+        </h2>
+
+
+
+        <p style="margin-top: 20px;">AgriAI is a pioneering AI/ML initiative aimed at transforming agricultural
+            methodologies through
+            cutting-edge
+            technology. Its three pivotal features — crop prediction, fertilizer suggestions, and crop disease
+            identification —
+            collectively empower farmers with insightful tools to enhance decision-making and optimize crop yield while
+            mitigating
+            risks.
+        </p>
+
+        <h4>Crop Prediction:</h4>
+        <p>
+            AgriAI utilizes sophisticated algorithms to forecast crop outcomes. By analyzing historical data,
+            environmental factors,
+            and crop-specific parameters, it provides farmers with accurate predictions of potential yields. This
+            foresight enables
+            farmers to plan cultivation strategies more effectively, ensuring resource optimization and improved overall
+            productivity.</p>
+
+        <h4>Fertilizer Suggestions:</h4>
+        <p>
+            The fertilizer recommendation system in AgriAI leverages machine learning models to analyze soil
+            composition, climate
+            conditions, and crop requirements. By doing so, it offers tailored suggestions on the type and quantity of
+            fertilizers
+            needed for optimal crop growth. This targeted approach not only enhances yield but also promotes sustainable
+            farming
+            practices by minimizing excess fertilizer usage.</p>
+
+        <h4>Crop Disease Identification:</h4>
+        <p>
+            AgriAI employs advanced image processing and AI algorithms to detect and identify diseases in crops. By
+            analyzing visual
+            symptoms and leaf patterns, the system provides early and accurate diagnoses of potential diseases. This
+            proactive
+            approach enables farmers to take prompt remedial actions, preventing the rapid spread of diseases and
+            minimizing crop
+            losses.</p>
+        <p>
+            AgriAI, with its integrated features, stands as a comprehensive solution for modernizing agriculture,
+            empowering farmers
+            with the tools they need for informed, efficient, and sustainable farming practices.</p>
+
+    </div>
+</div>
+
+
+{% endblock content %}

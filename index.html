@@ -1,0 +1,136 @@
+{% extends 'base.html' %} {% block title %}Welcome{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    body {
+
+
+        background-image: url("https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-2165688.jpg&fm=jpg");
+        background-size: cover;
+    }
+
+    .carousel-inner {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #fff;
+    }
+
+    h2 {
+        font-size: 3.5em;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+        font-size: 1.5em;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.5;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.295);
+        /* Transparent white background */
+        backdrop-filter: blur(5px);
+        /* Blur effect */
+    }
+</style>
+<div class="row-sm p-sm-5">
+    <div class="col-sm-12 p-sm-5">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- <img src="{{url_for('static', filename='images/sliders/first.jpg')}}" class="d-block w-100"
+                        alt="..."> -->
+
+                    <h2>Welcome to AgriAI</h2>
+                    <p>Your Agriculture AI Partner for Smart Farming Solutions.</p>
+                    <div class="container">
+                        <div class="d-flex flex-row">
+                            <div class="card m-2" style="width: 18rem; ">
+                                <img src="https://bloximages.newyork1.vip.townnews.com/lancasterfarming.com/content/tncms/assets/v3/editorial/7/8d/78d3616c-92b8-11ee-b360-33f85a40e2d1/656deded5d8bc.image.jpg "
+                                    style="height: 40%;" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3 class="card-title">Crop Recommendation</h3>
+                                    <p class="card-text" style="font-size: large;">Provide farmers with personalized
+                                        suggestions on which crops
+                                        are best suited for their specific agricultural conditions.</p>
+                                    <a href="/croprecommendation" class="btn btn-primary">Click Here</a>
+                                </div>
+                            </div>
+
+                            <div class="card m-2" style="width: 18rem;">
+                                <img src="https://t4.ftcdn.net/jpg/00/87/62/49/360_F_87624930_7n7NgLCFHff7IGr85DCgOcE2aPunov2m.jpg"
+                                    style="height: 40%; " class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3 class="card-title">Fertilizer Suggestion</h3>
+                                    <p class="card-text" style="font-size: large;">The goal is to provide farmers with
+                                        guidance on the optimal
+                                        types of fertilizers to use for their crops.
+                                        This recommendation is based on a thorough analysis of soil conditions, nutrient
+                                        levels, and crop requirements.</p>
+                                    <a href="/fpredict" class="btn btn-primary">Click Here</a>
+                                </div>
+                            </div>
+                            <div class="card m-2" style="width: 18rem;">
+                                <img src="https://t4.ftcdn.net/jpg/06/16/69/23/360_F_616692360_9jBcWjlEoc5oB7QCoknBLIg80CDi3aVe.jpg"
+                                    style="height: 40%;" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3 class="card-title">Crop Disease Detection</h3>
+                                    <p class="card-text" style="font-size: large;">Crop disease detection involves the
+                                        use of technology, such as
+                                        artificial intelligence and image processing, to
+                                        identify diseases affecting plants</p>
+                                    <a href="/plantdisease" class="btn btn-primary">Click Here</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+
+{% endblock content %}

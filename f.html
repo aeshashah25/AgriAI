@@ -1,0 +1,187 @@
+{% extends 'base.html' %}{% block title %}Fertilizer Suggestion {% endblock title %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fertilizer Prediction</title>
+    <style>
+        body {
+
+            text-align: center;
+            background-image: url("https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-2165688.jpg&fm=jpg");
+            background-size: cover;
+        }
+
+        h1 {
+            color: black;
+
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.295);
+            /* Transparent white background */
+            backdrop-filter: blur(5px);
+            /* Blur effect */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="number"] {
+            font-family: courier;
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            text-align-last: center;
+            border-radius: 10px;
+            font-family: courier;
+            font-size: 15px;
+            font-weight: bold;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #0066A2;
+            border-color: #0066A2;
+            border-style: outset;
+            color: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 12px 25px;
+            font: bold 20px arial, sans-serif;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .container1 {
+            padding: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <p class="text-center">
+        <h3 class="text-center">
+            Fertilizer Recommendation
+        </h3>
+
+        </p>
+        <p>
+
+        <h3>{{x}}</h3>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('fpredict')}}" method="post" id="Home">
+            <!-- <label for="temp"><b>Temperature:</b></label>
+            <input type="number" name="temp" placeholder="Enter the value" required="required" />
+
+            <label for="humid"><b>Humidity in %:</b></label>
+            <input type="number" name="humid" placeholder="Enter the value" required="required" />
+
+            <label for="mois"><b>Moisture:</b></label>
+            <input type="number" name="mois" placeholder="Enter the value" required="required" />
+
+            <label for="soil"><b>Soil Type:</b></label>
+            <select name="soil" id="soil">
+                <option value=0>Black</option>
+                <option value=1>Clayey</option>
+                <option value=2>Loamy</option>
+                <option value=3>Red</option>
+                <option value=4>Sandy</option>
+            </select>
+
+            <label for="crop"><b>Crop Type:</b></label>
+            <select name="crop" id="crop">
+                <option value=0>Barley</option>
+                <option value=1>Cotton</option>
+                <option value=2>Ground Nuts</option>
+                <option value=3>Maize</option>
+                <option value=4>Millets</option>
+                <option value=5>Oil Seeds</option>
+                <option value=6>Paddy</option>
+                <option value=7>Pulses</option>
+                <option value=8>Sugarcane</option>
+                <option value=9>Tobacco</option>
+                <option value=10>Wheat</option>
+            </select>
+
+            <label for="nitro"><b>Nitrogen:</b></label>
+            <input type="number" name="nitro" placeholder="Enter the value" required="required" />
+
+            <label for="pota"><b>Potassium:</b></label>
+            <input type="number" name="pota" placeholder="Enter the value" required="required" />
+
+            <label for="phos"><b>Phosphorous:</b></label>
+            <input type="number" name="phos" placeholder="Enter the value" required="required" />
+
+            <input type="submit"> -->
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Temperature</span>
+                <input type="number" name="temp" step="0.0001" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Humidity</span>
+                <input type="number" name="humid" step="0.0001" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Moisture</span>
+                <input type="number" name="mois" step="0.0001" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Soil Type</span>
+                <select name="soil" id="soil" class="form-control">
+                    <option value=0>Black</option>
+                    <option value=1>Clayey</option>
+                    <option value=2>Loamy</option>
+                    <option value=3>Red</option>
+                    <option value=4>Sandy</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Crop Type</span>
+                <select name="crop" id="crop" class="form-control">
+                    <option value=0>Barley</option>
+                    <option value=1>Cotton</option>
+                    <option value=2>Ground Nuts</option>
+                    <option value=3>Maize</option>
+                    <option value=4>Millets</option>
+                    <option value=5>Oil Seeds</option>
+                    <option value=6>Paddy</option>
+                    <option value=7>Pulses</option>
+                    <option value=8>Sugarcane</option>
+                    <option value=9>Tobacco</option>
+                    <option value=10>Wheat</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nitrogen</span>
+                <input type="number" name="nitro" step="0.0001" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Pottasium</span>
+                <input type="number" name="pota" step="0.0001" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Phosphorous</span>
+                <input type="number" name="phos" step="0.0001" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+{% endblock content %}
